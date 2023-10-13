@@ -27,10 +27,10 @@
                                 <img class="img-responsive img-full" src="img/귀령이20.jpg">
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/예쁜귀령이.jpg"> <!-- img-full 옵션 class -->
+                                <img class="img-responsive img-full" src="img/예쁜귀령이.jpg" height="1054" width="1080"> <!-- img-full 옵션 class -->
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/귀령.jpg">
+                                <img class="img-responsive img-full" src="img/세여자.jpg" height="1054" width="1080">
                             </div>   
                         </div>
 

@@ -67,12 +67,20 @@
                     <li>
                         <a href="">BOARD</a>
                     </li>
+                   <li>
+					    <% if (session.getAttribute("user_id") == null) { %>
+					        <a href="/MyWeb/user/login.jsp">LogIn</a>
+					    <% } else { %>
+					        <a href="/MyWeb/user/logout.jsp" style="color: #ff006e;">LogOut</a>
+					    <% } %>
+					</li>
                     <li>
-                        <a href="/MyWeb/user/login.jsp">LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="/MyWeb/user/join.jsp" style="color:red">JOIN</a>
-                    </li>
+					    <% if (session.getAttribute("user_id") == null) { %>
+					        <a href="/MyWeb/user/join.jsp" style="color: #ff006e;">JOIN</a>
+					    <% } else { %>
+					        <a href="/MyWeb/user/mypage.jsp">MyPage</a>
+					    <% } %>
+					</li>
                 </ul>
             </div>
             

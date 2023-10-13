@@ -4,6 +4,7 @@
 	//url주소로 강제 접근 막기
 	if(session.getAttribute("user_id")==null){
 		response.sendRedirect("login.jsp");
+		return;
 	}
 %>        
 <%
@@ -19,9 +20,9 @@
 			<hr>
 			Manage precious <%=id %>(<%=name %>) account.
 			<hr>
-			<input type="button" value="alter password" class="btn btn-success">
-			<input type="button" value="alter info" class="btn btn-primary">
-			<input type="button" value="quit" class="btn btn-danger">
+			<input type="button" value="alter password" class="btn btn-success" onclick="location.href='change_pw.jsp'">
+			<input type="button" value="alter info" class="btn btn-primary" onclick="location.href='update.jsp'">
+			<input type="button" value="quit" class="btn btn-danger" onclick="location.href='delete_check.jsp'">
 		</div>
 	
 	</section>

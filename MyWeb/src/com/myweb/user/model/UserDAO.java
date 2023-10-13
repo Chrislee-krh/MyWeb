@@ -148,4 +148,65 @@ public class UserDAO {
 		}
 		return vo;
 	}
+	
+	public int changePassword(String id, String pw) {
+		int result = 0;
+		String sql = "update users set pw = ? where id = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}
+		
+		
+		return result;
+	}
+	
+	public int update(UserVO vo) {
+		int result = 0;
+		String sql = "update users set name = ?, email = ?, address =? where id = ?";
+
+		try {
+			conn = ds.getConnection();
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(4, vo.getId());
+			System.out.println("메서드: "+ vo.getId());
+			pstmt.setString(1, vo.getName());
+			pstmt.setString(2, vo.getEmail());
+			pstmt.setString(3, vo.getAddress());
+			System.out.println("메서드: "+ vo.getName());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}
+		return result;
+	}
+	
+	public int delete(String id) {
+		int result = 0;
+		String sql = "delete from users where id = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return result;
+	}
+	
 }

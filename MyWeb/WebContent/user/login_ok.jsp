@@ -11,8 +11,6 @@
     request.setCharacterEncoding("utf-8");
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-   
-    System.out.println("["+id+","+pw+"]");
     
     UserDAO dao = UserDAO.getInstance();
     int result = dao.login(id, pw);
