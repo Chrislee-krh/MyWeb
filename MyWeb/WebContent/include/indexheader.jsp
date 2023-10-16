@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,20 +14,20 @@
     <title>Chris Lana Hael</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/MyWeb/css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/MyWeb/css/business-casual.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 	
 	 <!-- jQuery -->
-    <script src="/MyWeb/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/MyWeb/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
     <!-- Script to Activate the Carousel -->
     <script>
@@ -59,27 +61,42 @@
                 <ul class="nav navbar-nav">
                 	
                     <li>
-                        <a href="/MyWeb/index.jsp">HOME</a>
+                        <a href="${pageContext.request.contextPath}/index.do">HOME</a>
                     </li>
                     <li>
-                        <a href="/MyWeb/member/member.jsp">Member</a>
+                        <a href="${pageContext.request.contextPath}/member.do">Member</a>
                     </li>
                     <li>
-                        <a href="">BOARD</a>
+                        <a href="${pageContext.request.contextPath}/board/list.board">BOARD</a>
                     </li>
                    <li>
-					    <% if (session.getAttribute("user_id") == null) { %>
-					        <a href="/MyWeb/user/login.jsp">LogIn</a>
-					    <% } else { %>
-					        <a href="/MyWeb/user/logout.jsp" style="color: #ff006e;">LogOut</a>
-					    <% } %>
+						<c:choose>
+							<c:when test="${sessionScope.user_id eq null}">
+							 <li>
+								<a href="${pageContext.request.contextPath}/user/login.jsp">LogIn</a>
+							</li>
+							</c:when>
+							<c:otherwise>
+							<li>
+								<a href="${pageContext.request.contextPath}/user/logout.jsp" style="color: #ff006e;">LogOut</a>
+							</li>
+							</c:otherwise>
+						</c:choose>
+
 					</li>
                     <li>
-					    <% if (session.getAttribute("user_id") == null) { %>
-					        <a href="/MyWeb/user/join.jsp" style="color: #ff006e;">JOIN</a>
-					    <% } else { %>
-					        <a href="/MyWeb/user/mypage.jsp">MyPage</a>
-					    <% } %>
+                   		 <c:choose>	
+                    		<c:when test="${sessionScope.user_id eq null}">
+                    			<li>
+								<a href="${pageContext.request.contextPath}/user/join.jsp" style="color: #ff006e;">JOIN</a>
+								</li>
+							</c:when>
+							<c:otherwise>
+								<li>
+								<a href="${pageContext.request.contextPath}/user/mypage.jsp">MyPage</a>
+								<li>
+							</c:otherwise>
+						</c:choose>
 					</li>
                 </ul>
             </div>

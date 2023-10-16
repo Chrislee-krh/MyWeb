@@ -20,9 +20,9 @@
                 
                 
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member7.jpg" alt="">
-                    <h3>Actor
-                        <small>한지민</small>
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/사힙가족과.jpg" alt="">
+                    <h3>Baby
+                        <small>Hael</small>
                     </h3>
                 </div>
                
@@ -30,9 +30,9 @@
                     
                 </div>
                 <div class="col-sm-4 text-center">
-                  	<img class="img-responsive" src="../img/member8.jpg" alt="">
+                  	<img class="img-responsive" src="${pageContext.request.contextPath}/img/하엘음식.jpg" alt="">
                     <h3>Age
-                        <small>37</small>
+                        <small>6</small>
                     </h3>
                 </div>
                 <div class="clearfix"></div>
@@ -52,19 +52,19 @@
                     <hr>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member1.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/공항단체.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member2.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/귀령하엘.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member3.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/하엘.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
@@ -76,19 +76,19 @@
             <div class="box">
                 
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member4.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/온가족.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member5.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/침대우리가족.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="../img/member6.jpg" alt="">
+                    <img class="img-responsive" src="${pageContext.request.contextPath}/img/하엘이대상.jpg" alt="">
                     <h3>
                         <small></small>
                     </h3>
