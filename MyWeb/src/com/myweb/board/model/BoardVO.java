@@ -70,7 +70,11 @@ public class BoardVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "BoardVO [num=" + num + ", writer=" + writer + ", title=" + title + ", content=" + content + ", regdate="
+				+ regdate + ", hit=" + hit + "]";
+	}
+
 }
