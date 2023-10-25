@@ -8,8 +8,8 @@
 	}
 %>        
 <%
-    	String id = (String)session.getAttribute("user_id");
-    	String name = (String)session.getAttribute("user_name");
+    String id = (String)session.getAttribute("user_id");
+    String name = (String)session.getAttribute("user_name");
 %>
     
 	<%@ include file = "/include/indexheader.jsp" %>

@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myweb.board.model.BoardDAO;
 import com.myweb.board.model.BoardVO;
+import com.myweb.util.Criteria;
+import com.myweb.util.PageVO;
 
 public class ContentServiceImpl implements IBoardService {
 
@@ -13,6 +15,7 @@ public class ContentServiceImpl implements IBoardService {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String num = request.getParameter("num");
+		
 		BoardDAO dao = BoardDAO.getInstance();
 		// 3. 쿠키는 서버 전송될때 request객체에 담겨 돌아옴. 쿠키 검사
 		Cookie[] arr = request.getCookies();
@@ -28,8 +31,10 @@ public class ContentServiceImpl implements IBoardService {
 		
 		// 1. 조회수 업데이트
 //		dao.upHit(num);
+		
+		
 		BoardVO vo = dao.getContent(num);
-
+		
 		request.setAttribute("vo", vo);
 
 		// 2. 중복 증가 방지를 위한 쿠키 생성

@@ -35,8 +35,8 @@
 				<tr>
 					<!-- 글 등록 메뉴 -->
 					<td colspan="4" align="center">
-						<input type="button" value="list" onclick="location.href='list.board'">
-						<input type="button" value="modify" onclick="location.href='modify.board?num=${vo.num}'">
+						<input type="button" value="list" onclick="location.href='list.board?pageNum=${param.pageNum}'">
+						<input type="button" value="modify" onclick="location.href='modify.board?num=${vo.num}&pageNum=${param.pageNum}'">
 					</td>
 				</tr>
 			</table>

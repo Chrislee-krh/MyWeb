@@ -13,9 +13,10 @@ public class UpdateServiceImpl implements IBoardService {
 		String num = request.getParameter("num");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		
+		String filename = request.getParameter("filename");
+		String filerealname = request.getParameter("filerealname");
 		dao.update(num, title, content);
-		
+		dao.updateFile(num, filename, filerealname);
 	}
 
 }

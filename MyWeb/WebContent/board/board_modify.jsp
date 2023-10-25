@@ -3,7 +3,7 @@
 <%@ include file = "/include/indexheader.jsp" %>
 	<section>
 		<div align="center">
-			<form name="regform" action="update.board" method="post">
+			<form name="regform" action="update.board?pageNum=${pageVO.pageNum }" method="post">
 				<h2>Board page(modify)</h2>
 				<table border="1" width="500px">
 					<tr>
@@ -28,7 +28,7 @@
 						<!-- 글 등록 메뉴 -->
 						<td colspan="2" align="center">
 							<input type="button" value="Modify" onclick="modifyCheck()" class="btn-primary">
-							<input type="button" value="List" onclick="location.href='list.board'" class="btn-success:hover">
+							<input type="button" value="List" onclick="location.href='list.board?pageNum=${param.pageNum}'" class="btn-success:hover">
 							<input type="button" value="Delete" onclick="location.href='delete.board?num=${vo.num}'" class="btn-danger" >
 						</td>
 					</tr>

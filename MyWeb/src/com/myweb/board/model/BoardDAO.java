@@ -171,7 +171,35 @@ public class BoardDAO {
 				String content = rs.getString("content");
 				Timestamp regdate = rs.getTimestamp("regdate");
 				int hit = rs.getInt("hit");
-				vo = new BoardVO(num1, writer, title, content, regdate, hit);
+				String filename = rs.getString("filename");
+				String filerealname = rs.getString("filerealname");
+				vo = new BoardVO(num1, writer, title, content, regdate, hit, filename, filerealname);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}
+
+		return vo;
+	}
+	
+	public BoardVO getFile(String num) {
+		BoardVO vo = null;
+		String sql = "select * from file where filenum = ?";
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				int num1 = rs.getInt("num");
+				String filename = rs.getString("filename");
+				String filerealname = rs.getString("filerealname");
+				vo = new BoardVO(num1,filename, filerealname);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -200,6 +228,25 @@ public class BoardDAO {
 			JdbcUtil.close(conn, pstmt, rs);
 		}
 	}
+	
+    public void updateFile(String num,  String filename, String filerealname ) {
+
+        String sql= "update file set filename=?, filerealname=? where filenum =?";
+        
+        try {
+           conn =ds.getConnection();
+           pstmt=conn.prepareStatement(sql);
+           pstmt.setString(1, filename);
+           pstmt.setString(2, filerealname);
+           pstmt.setString(3, num);
+           pstmt.executeUpdate();
+        } catch (Exception e) {
+           e.printStackTrace();
+        }finally {
+           JdbcUtil.close(conn, pstmt, rs);
+        }
+        
+     }
 	
 	public void delete(String num) {
 		String sql = "delete from board where num = ?";

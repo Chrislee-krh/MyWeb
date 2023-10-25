@@ -10,10 +10,27 @@ public class BoardVO {
 	private String content;
 	private Timestamp regdate;
 	private int hit;
+	private String filename;
+	private String filerealname;
 	
 	public BoardVO() {}
+	
+	public BoardVO(int num1, String filename2, String filerealname2) {
+		this.num = num1;
+		this.filename = filename2;
+		this.filerealname = filerealname2;
+	}
 
-	public BoardVO(int num, String writer, String title, String content, Timestamp regdate, int hit) {
+   public BoardVO(int num, String writer, String title, String content, Timestamp regdate, int hit) {
+      this.num = num;
+      this.writer = writer;
+      this.title = title;
+      this.content = content;
+      this.regdate = regdate;
+      this.hit = hit;
+   }
+	
+	public BoardVO(int num, String writer, String title, String content, Timestamp regdate, int hit, String filename, String filerealname) {
 		super();
 		this.num = num;
 		this.writer = writer;
@@ -21,6 +38,24 @@ public class BoardVO {
 		this.content = content;
 		this.regdate = regdate;
 		this.hit = hit;
+		this.filename = filename;
+		this.filerealname = filerealname;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getFilerealname() {
+		return filerealname;
+	}
+
+	public void setFilerealname(String filerealname) {
+		this.filerealname = filerealname;
 	}
 
 	public int getNum() {

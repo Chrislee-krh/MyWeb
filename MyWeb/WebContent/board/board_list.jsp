@@ -22,7 +22,7 @@
 							<td class="text-center" style="background-color:#bde0fe">${vo.num }</td>
 							<td class="text-center">${vo.writer }</td>
 							<td>
-								<a href="content.board?num=${vo.num }">${vo.title }</a>
+								<a href="content.board?num=${vo.num }&pageNum=${pageVO.pageNum}">${vo.title }</a>
 							</td>
 							<td class="text-center">${vo.regdate }</td>
 							<td class="text-center">${vo.hit }</td>
@@ -47,15 +47,20 @@
 			</table>
 			<!-- 페이지 작업 공간 -->
 			<div align="center">
+			
 				<ul class="pagination pagination-sm">
-					<li><a href="list.board?pageNum=${pageVO.startPage - 10}">Prev</a></li>
+					<c:if test="${pageVO.prev }">
+						<li><a href="list.board?pageNum=${pageVO.startPage - 1}">Prev</a></li>
 					<!-- 1. 페이지 번호 처리 -->
+					</c:if>
 					<c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage }">
-						<li class="{num==pageVO.pageNum ? 'active': ''}"><a href="list.board?pageNum=${num }">${num }</a></li>
+						<li class="${num==pageVO.pageNum ? 'active': ''}"><a href="list.board?pageNum=${num }">${num }</a></li>
 					</c:forEach>
 				<!-- 	<li><a href="list.board?pageNum=${num +10}">${num +10}</a></li>  -->
 				<!-- 	<li><a href="#">next</a></li> -->
-					<li><a href="list.board?pageNum=${pageVO.endPage + 1}">Next</a></li>
+					<c:if test="${pageVO.next }">
+						<li><a href="list.board?pageNum=${pageVO.endPage + 1}">Next</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

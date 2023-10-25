@@ -3,7 +3,7 @@
 <%@ include file = "/include/indexheader.jsp" %>
 	<section>
 		<div align="center">
-			<form name="regform" action="register.board" method="post">
+			<form name="regform" action="register.board" method="post" enctype="multipart/form-data">
 				<h2>Board page</h2>
 				<table border="1" width="500px">
 					<tr>
@@ -19,6 +19,11 @@
 						<td>
 							<textarea rows="10" style="width:100%;" name="content"></textarea>
 						</td>
+					</tr>
+					<tr>
+						<td>attachment</td>
+						<td><input type="file" name="filename"></td>
+						
 					</tr>
 					<tr>
 						<!-- 글 등록 메뉴 -->
